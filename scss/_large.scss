@@ -1,0 +1,52 @@
+main{
+    @for $i from 1 through 4{
+        $w:($i/4)*100%;
+        .large-#{$i}{flex-basis: $w;}
+    }
+    }
+
+
+header, nav, main {
+    max-width: 1024px;
+    margin: auto;
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+
+
+
+
+//cards start
+
+div.cards{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 64rem;
+
+    div a {
+        justify-content: center;
+        width: 250px;
+        height: 250px;
+        text-decoration: none;
+        transition: all .5s ease-in;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 9%;
+    }
+
+div:nth-child(1){
+    background-size: 250px;
+    margin-left: 2%;
+}
+
+div:nth-child(2){
+    background-size: 250px;    
+}
+
+div:nth-child(3){
+    background-size: 250px;
+}
+div:nth-child(4){
+    background-size: 250px;
+}
+}

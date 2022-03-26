@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Plan Your Visit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.css"/>
+
+<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="headerWrapper">
+	<header>
+        <picture class="hero">
+            
+                <img src="/images/heroimg.jpg" class="himg" alt="City NYC">
+                <div class="heroTxt">
+                    <h1>Gotham City</h1>
+                    <h2 style="padding: 1rem 2vw 0.5rem 2vw;">A Vacation Spot for the Adventerous</h2>
+            
+            </div>
+        </picture>
+	</header>
+
+    
+    
+<div id="navWrapper">
+    <nav>
+        <button id="burger"><span>&#9776;</span><span>X</span></button>
+        <ul id="navMenu">
+            <li><a href="#">Home</a></li>
+            <li class="parent"><a href="#">Services</a>
+            <ul>
+                <li><a href="#">Make a Complaint</a></li>
+                <li><a href="#">Other</a></li>                
+            </ul>
+        </li>
+        <li class="parent"><a href="#">Hotels</a>
+            <ul>
+                <li><a href="#">5 STAR Hotels</a></li>
+                <li><a href="#">4 STAR Hotels</a></li>
+                <li><a href="#">3 STAR Hotels</a></li>
+                <li><a href="#">2 STAR Hotels</a></li>
+                <li><a href="#">1 STAR Hotels</a></li>
+            </ul>
+</li>
+            <li class="active parent"><a href="#">Plan Your Visit</a>
+                <ul>
+            <li><a href="#">Flights</a></li>    
+            <li><a href="#">Places of Interest</a></li>    
+            <li><a href="#">In-City Travel</a></li>   
+            </ul> 
+        </li>
+        </ul>
+
+    </nav>
+</div> <!-- end nav wrapper -->
+</div><!-- end header wrapper -->
+
+<div id="mainWrapper">
+    <main>
+
+
+<div class="sliders">
+    <picture> 
+        <source class="lazy" srcset="/images/nyc2small.jpg"
+        media="(max-width: 28.12rem)"> <!--use the screen if it is smaller than 28.12 rem wide-->
+        <source class="lazy" srcset="/images/nyc2wide.jpg"
+        media="(min-width: 28.12rem)">
+        <img src="/images/nyc2.jpg" alt="New York City slider">
+        <div><b>Welcome to Gotham City. Don't worry, crime is down.</b></div>
+    </picture>
+
+    <picture> 
+    <source class="lazy" srcset="/images/nyc5small.jpg"
+    media="(max-width: 28.12rem)"> <!--use the screen if it is smaller than 28.12 rem wide-->
+    <source class="lazy" srcset="/images/nyc5wide.jpg"
+    media="(min-width: 28.12rem)">
+    <img src="/images/nyc5.jpg" alt="New York City slider">
+    <div><b>As dusk approaches, many begin to sleep, all except one.</b></div>
+</picture>
+
+<picture> 
+    <source class="lazy" srcset="/images/nyc3small.jpg"
+    media="(max-width: 28.12rem)"> <!--use the screen if it is smaller than 28.12 rem wide-->
+    <source class="lazy" srcset="/images/nyc3wide.jpg"
+    media="(min-width: 28.12rem)">
+    <img src="/images/nyc3.jpg" alt="New York City slider">
+    <div><b>Known as the Batman, the night lurcher protects the city.</b></div>
+</picture>
+
+<picture> 
+    <source class="lazy" srcset="/images/nyc4small.jpg"
+    media="(max-width: 28.12rem)"> <!--use the screen if it is smaller than 28.12 rem wide-->
+    <source class="lazy" srcset="/images/nyc4wide.jpg"
+    media="(min-width: 28.12rem)">
+    <img src="/images/nyc4.jpg" alt="New York City slider">
+    <div><b>We all know that bats work better in the dark.</b></div>
+</picture>
+
+</div>
+
+
+<!--CARDS START HERE-->
+<h1>Plan Your Visit</h1>
+
+<div class="cards">
+    <div class="column small-4 medium-2 large-1"><!--The background image is located here in the '<div...>'-->
+        <a href = "#" class="fa-solid fa-suitcase-rolling"><!--icon...-->
+            <h3>Hotels</h3>
+        </a>
+    </div>
+    <div class="column small-4 medium-2 large-1">
+        <a href = "#" class="fa-solid fa-plane"><!--icon...-->
+            <h3>Flights</h3>
+        </a>
+    </div>
+    <div class="column small-4 medium-2 large-1">
+        <a href = "#" class="fa-solid fa-map-location-dot"><!--icon...-->
+            <h3>Places of Interest</h3>
+        </a>
+    </div>
+    <div class="column small-4 medium-2 large-1">
+        <a href = "#" class="fa-solid fa-van-shuttle"><!--icon...-->
+            <h3>In-City Travel</h3>
+        </a>
+    </div>
+</div>
+
+    </main>
+</div><!-- end main wrapper -->
+    
+<div id="footerWrapper">
+    <footer>
+        <p>Copyright &copy; 2022 Robert Lewis &bull; All rights reserved 
+            <a href="#"></a> | <a href="#">Terms of Use</a> |</p>
+    </footer>
+</div> <!-- end footer wrapper -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="/slick/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+$('.sliders').slick({
+    dots: true,
+    arrows:false,
+    infinite:true,
+    speed: 1000,
+    cssEase: 'ease-out',
+    autoplay:true,
+    autoplaySpeed:5000
+});
+});
+
+</script>
+
+<script>function openMenu() {
+    document.getElementById("navMenu").classList.toggle("classOpen");
+    document.getElementById("burger").classList.toggle("classOpen");
+}
+
+const x = document.getElementById('burger');
+x.onclick = openMenu
+const container = document.getElementById("burger")
+container.onclick = openMenu;</script>
+<script src="https://kit.fontawesome.com/24f74f3127.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
+<script> 
+var lazyLoadInstance = new LazyLoad({
+   elements_selector: ".lazy",
+   threshold: 0
+  });
+</script>
+</body>
+
+</html>

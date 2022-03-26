@@ -11,7 +11,7 @@
         ul#navMenu{
             justify-content: left;
             background: linear-gradient($secondaryColor 55%, $primaryColor);
-                        a{
+                                   a{
                 border: none;
             }
         }
@@ -45,7 +45,7 @@
     }
 
 }
-header div.heroText{
+header{
     
     display: inherit;
 
@@ -73,9 +73,8 @@ h1{
             overflow: hidden;
 
     /* visibility: hidden; */
-    position: absolute;
     width: 64rem;
-    margin: 0!important;
+    margin-top:80px;
     background: #fff;
     transition: all .2s ease;
     transform: translateY(-15px);

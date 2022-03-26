@@ -322,7 +322,6 @@ main .small-4 {
 .himg {
   max-width: 64rem;
   height: auto;
-  contain: content;
   background-blend-mode: color-burn; }
 
 div.heroTxt {
@@ -340,7 +339,12 @@ header {
     font-size: 1.6rem;
     font-weight: 300;
     padding-left: .5rem;
-    color: #DB766C; }
+    color: #a03227;
+    position: absolute;
+    margin-top: -70px; }
+  header h2 {
+    position: absolute;
+    margin-top: -55px; }
 
 /* NAVIGATION STUFF GOES HERE  */
 nav {
@@ -409,6 +413,7 @@ ul#navMenu li.active {
 #navMenu li.parent > a::after {
   font-size: .75rem;
   content: "\25BC";
+  justify-content: center;
   color: #000000da;
   float: right; }
 
@@ -434,7 +439,7 @@ main p {
 main h1 {
   padding: 1rem 2vw .5rem 2vw;
   font-size: 1.5rem;
-  color: #009dff;
+  color: #ccebff;
   font-weight: 300; }
 main .hero {
   width: 100%; }
@@ -458,20 +463,21 @@ picture div {
     padding-left: 15px; }
 
 h2 {
-  color: white; }
+  color: white;
+  text-shadow: 0 0 10px black; }
 
 div a.fa-solid.fa-suitcase-rolling::before {
   width: 25%;
   height: 500vw;
-  color: #eee; }
+  color: #ccebff; }
 
 .fa-solid {
   flex-basis: 25%;
-  color: white; }
+  color: #ccebff; }
 
 div.icon {
   display: block;
-  color: white; }
+  color: #ccebff; }
 
 div {
   display: block; }
@@ -662,13 +668,12 @@ footer {
     z-index: 1;
     top: 5%; }
 
-  ul#navMenu {
+  div nav {
     border: none;
     position: inherit;
     overflow: hidden;
     /* visibility: hidden; */
     width: 64rem;
-    margin-top: 80px;
     background: #fff;
     transition: all .2s ease;
     transform: translateY(-15px);

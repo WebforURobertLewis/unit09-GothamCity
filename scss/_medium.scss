@@ -67,14 +67,14 @@ h1{
             top: 5%;
             
         }
-        ul#navMenu{
+        div nav{
                 border: none;
             position: inherit;
             overflow: hidden;
 
     /* visibility: hidden; */
     width: 64rem;
-    margin-top:80px;
+
     background: #fff;
     transition: all .2s ease;
     transform: translateY(-15px);

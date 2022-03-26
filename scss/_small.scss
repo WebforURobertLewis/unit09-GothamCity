@@ -22,7 +22,6 @@ main{
 .himg{
     max-width: 64rem;
     height: auto;
-    contain: content;
     background-blend-mode: color-burn;
 }
 div.heroTxt{
@@ -36,14 +35,21 @@ header {
     display: grid;
     grid-template-columns: 51px auto;
     align-items: center;
-	
-	h1 {
+
+        h1 {
         margin-top: 65px;
         font-size: 1.6rem;
         font-weight: $lightWeight;
         padding-left: .5rem;
-        color: $primaryColor;
+        color: darken($primaryColor, 25%);
+        position: absolute;
+        margin-top: -70px;
     }
+    h2{
+        position: absolute;
+        margin-top: -55px;
+    }
+
 } // end header
 
 /* NAVIGATION STUFF GOES HERE  */
@@ -108,7 +114,6 @@ nav {
     color: #fff;
     transition: all .2s ease-in;
 
-
     }
 
 }
@@ -137,6 +142,7 @@ nav ul#navMenu li:hover{
     
     font-size: .75rem;
     content: "\25BC";
+    justify-content: center;
     color: #000000da;
     float: right;
 }
@@ -166,8 +172,8 @@ main {
 	h1 {
         padding: 1rem 2vw .5rem 2vw; 
         font-size: 1.5rem; 
-        color: $secondaryColor;
-        font-weight: $lightWeight
+        color: lighten($secondaryColor, 40%);
+        font-weight: $lightWeight;
     }
     .hero {width: 100%;}
     .hero img {
@@ -197,22 +203,23 @@ picture div{
 }
 h2 {
     color: white;
+    text-shadow: 0 0 10px black;
 }
 
 //cards start
 div a.fa-solid.fa-suitcase-rolling::before{
     width: 25%;
     height: 500vw;
-    color: #eee;
+    color: lighten($secondaryColor, 40%);
 
 }
 .fa-solid{
     flex-basis: 25%;
-    color: white;
+    color: lighten($secondaryColor, 40%);
 }
 div.icon{
     display: block;
-    color: white;
+    color: lighten($secondaryColor, 40%);
 } 
 div{display: block;}
 div.cards{

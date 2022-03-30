@@ -1,6 +1,72 @@
 /* NAVIGATION STUFF GOES HERE  */
+nav #navMenu.classOpen{
+    position:relative;
+    display: flex;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+}
+nav{
+    background-color: $menuColor;
 
+    button{
+        display: none;
+    }
+    ul{
+        display: none;
+        display: flex;
+        margin-left: 2%;
+    }
+    ul li {border-right: 1px solid rgba(0, 0, 0, 0.096);}
+    ul li a{
+        display: block;
+        font-size: 1rem;
+        padding: .9rem 1.2rem;
+        color: $menuColor;
+        text-decoration: none;
+        transition: background .3s linear;
+        border-bottom: none;
+        top: 0;
+    }
+    ul li a:hover{
+        background: $secondaryColor;
+    }
+    #navMenu li.parent > a:after{
+        content: "\25BC";
+        font-size: .65rem;
+        color: black;
+        float: right;
+    }
+    ul li ul{
+        display: flex;
+        flex-direction: column;
+        background-color: darken($menuColor, 10%);
+        width: 10rem;
+        position: absolute;
+        left: -999rem;
+        z-index: 99;
+    }
+    ul li ul li {
+        border-right: none;
+        border-top: solid 1px $primaryColor;
+        border:none;
+    }
+    ul li:hover ul{
+        left: auto;
+        margin-left: 0;
+    }
+    li.active a{
+        background-color: #388E8F;
+    }
+}
+ul.classOpen{
+    display: none;
+    top: 0;
+}
 
+header{   
+    max-height: 193px;}
+/*
 #headerWrapper {
     
     right: 0%;
@@ -49,12 +115,13 @@ header{
     
     display: inherit;
 
-h1{
+    h1{
     margin-top: -135px;
     h2{
         margin-left: 25px;
     }
-}}
+}
+}
 
     nav ul li.active a{
         background-color: lighten($primaryColor, 5%);
@@ -72,7 +139,7 @@ h1{
             position: inherit;
             overflow: hidden;
 
-    /* visibility: hidden; */
+    /* visibility: hidden; 
     width: 64rem;
 
     background: #fff;
@@ -84,17 +151,21 @@ h1{
             
         }
 
-
+*/
 
 //pushes menu to be above other page sections
+/*
 ul#navMenu.classOpen{
-    z-index: 3;
+    z-index: 99;
     width: 100%;
     right: 0;
     top: 5%;
 
 }
-
+nav ul li a {
+    z-index: 99;
+    position: absolute;
+}
     nav ul li.active a{
         background-color: lighten($primaryColor, 35%);
         color: lighten($secondaryColor, 40%);
@@ -103,8 +174,12 @@ ul#navMenu.classOpen{
     nav ul li {width: auto;}
 
     nav ul li a{padding: .5rem 1rem;}
+    nav ul li ul li{
+        position: relative;
+        z-index: 99;
 
-
+    }
+*/
     /*End Nav*/
 main{
     @for $i from 1 through 4{

@@ -377,15 +377,15 @@ nav {
     display: block;
     transition: all .5s ease-in; }
   nav ul li a {
-    transition: all .5s ease-in;
     display: block;
     border-bottom: .1px solid #ffffffc7;
     padding: .9rem 2vw;
     font-size: .9rem;
     padding-left: 1rem;
-    background-color: white;
+    background-color: #e59c95;
     text-decoration: none;
-    text-align: left; }
+    text-align: left;
+    transition: background-color .2s ease-in; }
   nav ul li a:hover {
     background-color: #3a120e;
     color: #fff;
@@ -418,7 +418,6 @@ ul#navMenu li.active {
   float: right; }
 
 #navMenu li ul {
-  display: none;
   background: rgba(0, 0, 0, 0.1);
   padding: 0; }
 
@@ -430,6 +429,12 @@ ul#navMenu li.active {
 #navMenu li:hover ul {
   display: block;
   transition: all .5s ease-in; }
+
+nav #navMenu.classOpen {
+  position: absolute;
+  z-index: 99;
+  top: 3rem;
+  width: 100%; }
 
 /* MAIN  */
 main p {
@@ -625,76 +630,176 @@ footer {
 /* End Mobile Styles */
 @media only screen and (min-width: 35rem) {
   /* NAVIGATION STUFF GOES HERE  */
-  #headerWrapper {
-    right: 0%; }
-    #headerWrapper button {
+  nav #navMenu.classOpen {
+    position: relative;
+    display: flex;
+    z-index: 99;
+    top: 0;
+    width: 100%; }
+
+  nav {
+    background-color: #265b7d; }
+    nav button {
       display: none; }
-    #headerWrapper ul#navMenu {
-      justify-content: left;
-      background: linear-gradient(#009dff 55%, #DB766C); }
-      #headerWrapper ul#navMenu a {
-        border: none; }
-    #headerWrapper ul, #headerWrapper ul.classOpen {
-      position: relative;
-      width: 100%;
+    nav ul {
+      display: none;
       display: flex;
-      margin-bottom: 0; }
-      #headerWrapper ul li, #headerWrapper ul.classOpen li {
-        transition: all 3s ease-in; }
-      #headerWrapper ul li a, #headerWrapper ul.classOpen li a {
-        border: none;
-        margin: 0;
-        width: auto; }
-      #headerWrapper ul ul#navMenu, #headerWrapper ul.classOpen ul#navMenu {
-        text-align: right;
-        justify-content: right;
-        max-width: 75px;
-        width: 25px; }
-      #headerWrapper ul ul#navMenu.classOpen, #headerWrapper ul.classOpen ul#navMenu.classOpen {
-        position: relative; }
+      margin-left: 2%; }
+    nav ul li {
+      border-right: 1px solid rgba(0, 0, 0, 0.096); }
+    nav ul li a {
+      display: block;
+      font-size: 1rem;
+      padding: .9rem 1.2rem;
+      color: #265b7d;
+      text-decoration: none;
+      transition: background .3s linear;
+      border-bottom: none;
+      top: 0; }
+    nav ul li a:hover {
+      background: #009dff; }
+    nav #navMenu li.parent > a:after {
+      content: "\25BC";
+      font-size: .65rem;
+      color: black;
+      float: right; }
+    nav ul li ul {
+      display: flex;
+      flex-direction: column;
+      background-color: #1a3f56;
+      width: 10rem;
+      position: absolute;
+      left: -999rem;
+      z-index: 99; }
+    nav ul li ul li {
+      border-right: none;
+      border-top: solid 1px #DB766C;
+      border: none; }
+    nav ul li:hover ul {
+      left: auto;
+      margin-left: 0; }
+    nav li.active a {
+      background-color: #388E8F; }
+
+  ul.classOpen {
+    display: none;
+    top: 0; }
 
   header {
-    display: inherit; }
-    header h1 {
-      margin-top: -135px; }
-      header h1 h2 {
-        margin-left: 25px; }
+    max-height: 193px; }
 
-  nav ul li.active a {
-    background-color: #e08980;
-    color: #ccebff; }
-
-  ul#navMenu.classOpen {
-    z-index: 1;
-    top: 5%; }
-
-  div nav {
-    border: none;
-    position: inherit;
-    overflow: hidden;
-    /* visibility: hidden; */
-    width: 64rem;
-    background: #fff;
-    transition: all .2s ease;
-    transform: translateY(-15px);
-    z-index: 1000; }
-
-  ul#navMenu.classOpen {
-    z-index: 3;
-    width: 100%;
-    right: 0;
-    top: 5%; }
-
-  nav ul li.active a {
-    background-color: #fefcfb;
-    color: #ccebff; }
-
-  nav ul li {
-    width: auto; }
-
+  /*
+  #headerWrapper {
+      
+      right: 0%;
+      button{
+              display: none;
+              
+          }
+          ul#navMenu{
+              justify-content: left;
+              background: linear-gradient($secondaryColor 55%, $primaryColor);
+                                     a{
+                  border: none;
+              }
+          }
+      ul, ul.classOpen{
+              position: relative;
+              width: 100%;
+              display: flex;            
+              margin-bottom: 0;
+              li{
+                  transition: all 3s ease-in;
+  
+              }
+  
+              li a{
+                      border: none;
+                      margin: 0;
+                      width: auto;
+                      
+              }
+              ul#navMenu{
+                      text-align: right;
+                      justify-content: right;
+  
+                      max-width: 75px;
+                      width: 25px;
+              }
+              ul#navMenu.classOpen{
+                      position: relative; //moves menu over to right when button is active
+                      
+              }
+      }
+  
+  }
+  header{
+      
+      display: inherit;
+  
+      h1{
+      margin-top: -135px;
+      h2{
+          margin-left: 25px;
+      }
+  }
+  }
+  
+      nav ul li.active a{
+          background-color: lighten($primaryColor, 5%);
+          color: lighten($secondaryColor, 40%);
+          
+          
+      }
+      ul#navMenu.classOpen{
+              z-index: 1;
+              top: 5%;
+              
+          }
+          div nav{
+                  border: none;
+              position: inherit;
+              overflow: hidden;
+  
+      /* visibility: hidden; 
+      width: 64rem;
+  
+      background: #fff;
+      transition: all .2s ease;
+      transform: translateY(-15px);
+      z-index: 1000;
+  
+  
+              
+          }
+  
+  */
+  /*
+  ul#navMenu.classOpen{
+      z-index: 99;
+      width: 100%;
+      right: 0;
+      top: 5%;
+  
+  }
   nav ul li a {
-    padding: .5rem 1rem; }
-
+      z-index: 99;
+      position: absolute;
+  }
+      nav ul li.active a{
+          background-color: lighten($primaryColor, 35%);
+          color: lighten($secondaryColor, 40%);
+      }
+  
+      nav ul li {width: auto;}
+  
+      nav ul li a{padding: .5rem 1rem;}
+      nav ul li ul li{
+          position: relative;
+          z-index: 99;
+  
+      }
+  */
   /*End Nav*/
   main .medium-1 {
     flex-basis: 25%; }
